@@ -29,4 +29,5 @@ const app = express();
 app.use(express.json());
 app.use(studentRouter);
 
+// Iniciar servidor
 app.listen(process.env.PORT, () => console.log('Servidor em execucao'));
