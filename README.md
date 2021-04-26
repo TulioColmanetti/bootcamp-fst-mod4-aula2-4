@@ -1,5 +1,5 @@
 # bootcamp-fst-mod4-aula2-4
-Repositório remoto da Aula 2-4 do Módulo 4 - Bootcamp Full-Stack Developer
+Repositório remoto da aula 2-4 do módulo 4 - Bootcamp Full-Stack Developer
 
 Conceitos usados nessa aula:
 - Comandos Git
