@@ -11,10 +11,14 @@ const app = express();
   try {
     await mongoose.connect(
       'mongodb+srv://' +
-        process.env.USERDB +
+        process.env.DB_USER +
         ':' +
-        process.env.PWDDB +
-        '@cluster0.a5xyz.mongodb.net/grades?retryWrites=true&w=majority',
+        process.env.DB_PWD +
+        '@' +
+        process.env.DB_HOST +
+        ':' +
+        process.env.DB_PORT +
+        '/grades?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -30,4 +34,4 @@ app.use(express.json());
 app.use(studentRouter);
 
 // Iniciar servidor
-app.listen(process.env.PORT, () => console.log('Servidor em execucao'));
+app.listen(process.env.API_PORT, () => console.log('Servidor em execucao'));
