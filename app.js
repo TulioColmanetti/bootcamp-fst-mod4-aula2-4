@@ -16,8 +16,6 @@ const app = express();
         process.env.DB_PWD +
         '@' +
         process.env.DB_HOST +
-        ':' +
-        process.env.DB_PORT +
         '/grades?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
@@ -26,7 +24,7 @@ const app = express();
     );
     console.log('Conectado no MongoDB');
   } catch (error) {
-    console.log('Erro ao conectar no MongoDB');
+    console.log('Erro ao conectar no MongoDB: ' + error);
   }
 })();
 
