@@ -60,6 +60,8 @@ app.put('/student/:id', async (req, res) => {
       { new: true }
     );
 
+    console.log(req.params.id);
+
     res.send(student);
   } catch (err) {
     res.status(500).send(err);
