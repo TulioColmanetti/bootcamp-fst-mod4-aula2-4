@@ -41,7 +41,7 @@ app.delete('/student/:id', async (req, res) => {
 app.patch('/student/:id', async (req, res) => {
   try {
     const student = await studentModel.findOneAndUpdate(
-      req.params.id,
+      { _id: req.params.id },
       req.body,
       { new: true }
     );
@@ -55,12 +55,10 @@ app.patch('/student/:id', async (req, res) => {
 app.put('/student/:id', async (req, res) => {
   try {
     const student = await studentModel.findOneAndUpdate(
-      req.params.id,
+      { _id: req.params.id },
       req.body,
       { new: true }
     );
-
-    console.log(req.params.id);
 
     res.send(student);
   } catch (err) {
