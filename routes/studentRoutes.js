@@ -26,7 +26,7 @@ app.post('/student', async (req, res) => {
 
 app.delete('/student/:id', async (req, res) => {
   try {
-    const student = await studentModel.findOneAndDelete(req.params.id);
+    const student = await studentModel.findOneAndDelete({ _id: req.params.id });
 
     if (!student) {
       res.status(404).send('Documento nao encontrado');
